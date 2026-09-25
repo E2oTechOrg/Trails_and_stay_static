@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Vacation Rental - Free Bootstrap 4 Template by Colorlib</title>
+    <title>Our Stay - Kodai Trails | Villa in Kodaikanal</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
- 
+
     <link rel="stylesheet" href="css/animate.css">
-    
+
     <link rel="stylesheet" href="css/owl.carousel.min.css">
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     <link rel="stylesheet" href="css/magnific-popup.css">
@@ -21,272 +21,418 @@
 
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <style>
+      :root{
+        --dt: #22403A;
+        --dt-light: #E7EEEC;
+        --dt-soft: #F4F8F7;
+        --dt-accent: #2F5A50;
+      }
+
+      .hero-wrap-2 .overlay{ background: linear-gradient(135deg, rgba(34,64,58,.82), rgba(34,64,58,.55)); }
+      .hero-wrap-2 .breadcrumbs a{ color: #cfe4dd; }
+      .hero-wrap-2 .breadcrumbs span{ color: #fff; }
+
+      .dt-eyebrow{
+        color: var(--dt);
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .dt-bg-soft{ background: var(--dt-soft); }
+
+      .btn-dt{
+        display: inline-block;
+        background: var(--dt);
+        border: none;
+        color: #fff !important;
+        font-weight: 600;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+        font-size: 13px;
+        padding: 11px 26px;
+        border-radius: 30px;
+        transition: background .3s ease, transform .3s ease;
+      }
+      .btn-dt:hover{ background: var(--dt-accent); transform: translateY(-2px); text-decoration: none; }
+
+      /* Intro stats */
+      .dt-stat{ display: inline-block; margin-right: 34px; margin-top: 16px; }
+      .dt-stat .num{
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: var(--dt);
+        font-size: 30px;
+        display: block;
+      }
+      .dt-stat .label{ color: #7c8c85; font-size: 13px; text-transform: uppercase; letter-spacing: .5px; }
+
+      /* Room / space gallery cards */
+      .room-card{
+        background: #fff;
+        border-radius: 14px;
+        overflow: hidden;
+        box-shadow: 0 12px 32px rgba(34,64,58,.1);
+        margin-bottom: 30px;
+        height: 100%;
+      }
+      .room-card .photo{
+        height: 260px;
+        background-size: cover;
+        background-position: center;
+      }
+      .room-card .body{ padding: 24px 26px 28px; }
+      .room-card .heading{
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: var(--dt);
+        font-size: 19px;
+        margin-bottom: 8px;
+      }
+      .room-card p{ color: #667873; margin-bottom: 0; font-size: 14.5px; }
+      .room-tag{
+        display: inline-block;
+        background: var(--dt-soft);
+        color: var(--dt);
+        border: 1px solid var(--dt-light);
+        border-radius: 30px;
+        padding: 4px 14px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: .5px;
+        margin-bottom: 12px;
+      }
+
+      /* CTA card that fills a leftover grid slot */
+      .room-card-cta{
+        background: var(--dt);
+        min-height: 260px;
+        padding: 30px;
+      }
+      .room-card-cta .room-tag{
+        background: rgba(255,255,255,.12);
+        border-color: rgba(255,255,255,.25);
+        color: #fff;
+      }
+      .room-card-cta .heading{ color: #fff; }
+      .room-card-cta p{ color: #cfe4dd; }
+      .room-card-cta .btn-dt{ background: #fff; color: var(--dt) !important; }
+      .room-card-cta .btn-dt:hover{ background: var(--dt-soft); }
+
+      /* Feature strip */
+      .dt-feature{ display: flex; align-items: flex-start; margin-bottom: 26px; }
+      .dt-feature .icon{
+        min-width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: var(--dt-soft);
+        border: 1px solid var(--dt-light);
+        color: var(--dt);
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .dt-feature .txt{ padding-left: 16px; }
+      .dt-feature h4{
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: var(--dt);
+        font-size: 16px;
+        margin-bottom: 3px;
+      }
+      .dt-feature p{ color: #667873; font-size: 14px; margin-bottom: 0; }
+    </style>
   </head>
   <body>
-		<div class="wrap">
-			<div class="container">
-				<div class="row justify-content-between">
-						<div class="col d-flex align-items-center">
-							<p class="mb-0 phone"><span class="mailus">Phone no:</span> <a href="#">+00 1234 567</a> or <span class="mailus">email us:</span> <a href="#">emailsample@email.com</a></p>
-						</div>
-						<div class="col d-flex justify-content-end">
-							<div class="social-media">
-				    		<p class="mb-0 d-flex">
-				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
-				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
-				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
-				    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
-				    		</p>
-			        </div>
-						</div>
-				</div>
-			</div>
-		</div>
-		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-	    <div class="container">
-	    	<a class="navbar-brand" href="index.html">Vacation<span>Rental</span></a>
-	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-	        <span class="fa fa-bars"></span> Menu
-	      </button>
-	      <div class="collapse navbar-collapse" id="ftco-nav">
-	        <ul class="navbar-nav ml-auto">
-	        	<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-	        	<li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-	        	<li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-	        	<li class="nav-item active"><a href="rooms.html" class="nav-link">Apartment Rooms</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	        </ul>
-	      </div>
-	    </div>
-	  </nav>
+    <div id="header-container"></div>
     <!-- END nav -->
 
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/k3.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Rooms <i class="fa fa-chevron-right"></i></span></p>
-            <h1 class="mb-0 bread">Apartment Room</h1>
+            <p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Our Stay <i class="fa fa-chevron-right"></i></span></p>
+            <h1 class="mb-0 bread">Our Stay</h1>
           </div>
         </div>
       </div>
     </section>
-   
-    <section class="ftco-section bg-light ftco-no-pt ftco-no-pb">
-			<div class="container-fluid px-md-0">
-				<div class="row no-gutters">
-    			<div class="col-lg-6">
-    				<div class="room-wrap d-md-flex">
-    					<a href="#" class="img" style="background-image: url(images/room-1.jpg);"></a>
-    					<div class="half left-arrow d-flex align-items-center">
-    						<div class="text p-4 p-xl-5 text-center">
-    							<p class="star mb-0"><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></p>
-    							<p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-	    						<h3 class="mb-3"><a href="rooms.html">Suite Room</a></h3>
-	    						<ul class="list-accomodation">
-	    							<li><span>Max:</span> 3 Persons</li>
-	    							<li><span>Size:</span> 45 m2</li>
-	    							<li><span>View:</span> Sea View</li>
-	    							<li><span>Bed:</span> 1</li>
-	    						</ul>
-	    						<p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-lg-6">
-    				<div class="room-wrap d-md-flex">
-    					<a href="#" class="img" style="background-image: url(images/room-2.jpg);"></a>
-    					<div class="half left-arrow d-flex align-items-center">
-    						<div class="text p-4 p-xl-5 text-center">
-    							<p class="star mb-0"><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></p>
-    							<p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-	    						<h3 class="mb-3"><a href="rooms.html">Standard Room</a></h3>
-									<ul class="list-accomodation">
-	    							<li><span>Max:</span> 3 Persons</li>
-	    							<li><span>Size:</span> 45 m2</li>
-	    							<li><span>View:</span> Sea View</li>
-	    							<li><span>Bed:</span> 1</li>
-	    						</ul>
-	    						<p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
 
-    			<div class="col-lg-6">
-    				<div class="room-wrap d-md-flex">
-    					<a href="#" class="img order-md-last" style="background-image: url(images/room-3.jpg);"></a>
-    					<div class="half right-arrow d-flex align-items-center">
-    						<div class="text p-4 p-xl-5 text-center">
-    							<p class="star mb-0"><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></p>
-    							<p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-	    						<h3 class="mb-3"><a href="rooms.html">Family Room</a></h3>
-									<ul class="list-accomodation">
-	    							<li><span>Max:</span> 3 Persons</li>
-	    							<li><span>Size:</span> 45 m2</li>
-	    							<li><span>View:</span> Sea View</li>
-	    							<li><span>Bed:</span> 1</li>
-	    						</ul>
-	    						<p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-lg-6">
-    				<div class="room-wrap d-md-flex">
-    					<a href="#" class="img order-md-last" style="background-image: url(images/room-4.jpg);"></a>
-    					<div class="half right-arrow d-flex align-items-center">
-    						<div class="text p-4 p-xl-5 text-center">
-    							<p class="star mb-0"><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></p>
-    							<p class="mb-0"><span class="price mr-1">$120.00</span> <span class="per">per night</span></p>
-	    						<h3 class="mb-3"><a href="rooms.html">Deluxe Room</a></h3>
-									<ul class="list-accomodation">
-	    							<li><span>Max:</span> 3 Persons</li>
-	    							<li><span>Size:</span> 45 m2</li>
-	    							<li><span>View:</span> Sea View</li>
-	    							<li><span>Bed:</span> 1</li>
-	    						</ul>
-	    						<p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-
-    			<div class="col-lg-6">
-    				<div class="room-wrap d-md-flex">
-    					<a href="#" class="img" style="background-image: url(images/room-5.jpg);"></a>
-    					<div class="half left-arrow d-flex align-items-center">
-    						<div class="text p-4 p-xl-5 text-center">
-    							<p class="star mb-0"><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></p>
-	    						<h3 class="mb-3"><a href="rooms.html">Luxury Room</a></h3>
-									<ul class="list-accomodation">
-	    							<li><span>Max:</span> 3 Persons</li>
-	    							<li><span>Size:</span> 45 m2</li>
-	    							<li><span>View:</span> Sea View</li>
-	    							<li><span>Bed:</span> 1</li>
-	    						</ul>
-	    						<p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-lg-6">
-    				<div class="room-wrap d-md-flex">
-    					<a href="#" class="img" style="background-image: url(images/room-6.jpg);"></a>
-    					<div class="half left-arrow d-flex align-items-center">
-    						<div class="text p-4 p-xl-5 text-center">
-    							<p class="star mb-0"><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span><span class="fa fa-star"></span></p>
-	    						<h3 class="mb-3"><a href="rooms.html">Superior Room</a></h3>
-									<ul class="list-accomodation">
-	    							<li><span>Max:</span> 3 Persons</li>
-	    							<li><span>Size:</span> 45 m2</li>
-	    							<li><span>View:</span> Sea View</li>
-	    							<li><span>Bed:</span> 1</li>
-	    						</ul>
-	    						<p class="pt-1"><a href="room-single.html" class="btn-custom px-3 py-2">View Room Details <span class="icon-long-arrow-right"></span></a></p>
-    						</div>
-    					</div>
-    				</div>
-    			</div>
-    		</div>
-			</div>
-		</section>
-		
-    <footer class="footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-lg-3 mb-md-0 mb-4">
-						<h2 class="footer-heading"><a href="#" class="logo">Vacation Rental</a></h2>
-						<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-						<a href="#">Read more <span class="fa fa-chevron-right" style="font-size: 11px;"></span></a>
-					</div>
-					<div class="col-md-6 col-lg-3 mb-md-0 mb-4">
-						<h2 class="footer-heading">Services</h2>
-						<ul class="list-unstyled">
-              <li><a href="#" class="py-1 d-block">Map Direction</a></li>
-              <li><a href="#" class="py-1 d-block">Accomodation Services</a></li>
-              <li><a href="#" class="py-1 d-block">Great Experience</a></li>
-              <li><a href="#" class="py-1 d-block">Perfect central location</a></li>
-            </ul>
-					</div>
-					<div class="col-md-6 col-lg-3 mb-md-0 mb-4">
-						<h2 class="footer-heading">Tag cloud</h2>
-						<div class="tagcloud">
-	            <a href="#" class="tag-cloud-link">apartment</a>
-	            <a href="#" class="tag-cloud-link">home</a>
-	            <a href="#" class="tag-cloud-link">vacation</a>
-	            <a href="#" class="tag-cloud-link">rental</a>
-	            <a href="#" class="tag-cloud-link">rent</a>
-	            <a href="#" class="tag-cloud-link">house</a>
-	            <a href="#" class="tag-cloud-link">place</a>
-	            <a href="#" class="tag-cloud-link">drinks</a>
-	          </div>
-					</div>
-					<div class="col-md-6 col-lg-3 mb-md-0 mb-4">
-						<h2 class="footer-heading">Subcribe</h2>
-						<form action="#" class="subscribe-form">
-              <div class="form-group d-flex">
-                <input type="text" class="form-control rounded-left" placeholder="Enter email address">
-                <button type="submit" class="form-control submit rounded-right"><span class="sr-only">Submit</span><i class="fa fa-paper-plane"></i></button>
+    <!-- Intro -->
+    <section class="ftco-section bg-light ftco-no-pb">
+      <div class="container">
+        <div class="row justify-content-center pb-4">
+          <div class="col-md-8 text-center ftco-animate">
+            <span class="dt-eyebrow">A private villa in Kodaikanal</span>
+            <h2 style="color:var(--dt);font-family:'Playfair Display',serif;font-weight:700;">Wake Up to the Hills</h2>
+            <p style="color:#58685f;">A full villa with its own private pool, rooftop terrace, and hill views on every side &mdash; built for families and groups who want space, privacy, and a proper view of Kodaikanal.</p>
+            <div class="mt-2">
+              <div class="dt-stat">
+                <span class="num">2</span>
+                <span class="label">Living Areas</span>
               </div>
-            </form>
-            <h2 class="footer-heading mt-5">Follow us</h2>
-            <ul class="ftco-footer-social p-0">
-              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="fa fa-twitter"></span></a></li>
-              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="fa fa-facebook"></span></a></li>
-              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="fa fa-instagram"></span></a></li>
-            </ul>
-					</div>
-				</div>
-			</div>
-			<div class="w-100 mt-5 border-top py-5">
-				<div class="container">
-					<div class="row">
-	          <div class="col-md-6 col-lg-8">
+              <div class="dt-stat">
+                <span class="num">1</span>
+                <span class="label">Private Pool</span>
+              </div>
+              <div class="dt-stat">
+                <span class="num">1</span>
+                <span class="label">Rooftop Terrace</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-	            <p class="copyright mb-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
-	  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-	          </div>
-	          <div class="col-md-6 col-lg-4 text-md-right">
-	          	<p class="mb-0 list-unstyled">
-	          		<a class="mr-md-3" href="#">Terms</a>
-	          		<a class="mr-md-3" href="#">Privacy</a>
-	          		<a class="mr-md-3" href="#">Compliances</a>
-	          	</p>
-	          </div>
-	        </div>
-				</div>
-			</div>
-		</footer>
-    
-  
+    <!-- Gallery of spaces -->
+    <section class="ftco-section bg-light">
+      <div class="container">
+        <div class="row">
 
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="room-card">
+              <div class="photo" style="background-image: url(images/room-pool.jpeg);"></div>
+              <div class="body">
+                <span class="room-tag">Outdoors</span>
+                <h3 class="heading">Private Pool</h3>
+                <p>A dedicated plunge pool along the terrace wall, lit up in the evening with hill and valley views beyond the boundary wall &mdash; a quiet spot for a swim before dinner.</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="room-card">
+              <div class="photo" style="background-image: url(images/room-kitchen.jpeg);"></div>
+              <div class="body">
+                <span class="room-tag">Kitchen</span>
+                <h3 class="heading">Kitchen &amp; Breakfast Counter</h3>
+                <p>A full kitchen with granite counters and a wooden breakfast bar under three coloured pendant lights, with a window framing the surrounding hills.</p>
+              </div>
+            </div>
+          </div>
 
-  <script src="js/jquery.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.animateNumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="room-card">
+              <div class="photo" style="background-image: url(images/room-living1.jpeg);"></div>
+              <div class="body">
+                <span class="room-tag">Living Room</span>
+                <h3 class="heading">Lower Living Room</h3>
+                <p>A large L-shaped sofa and matching ottomans set beneath cove lighting, with marble flooring and sheer curtains for a bright, relaxed sitting space.</p>
+              </div>
+            </div>
+          </div>
 
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="room-card">
+              <div class="photo" style="background-image: url(images/room-bedroom.jpeg);"></div>
+              <div class="body">
+                <span class="room-tag">Bedroom</span>
+                <h3 class="heading">Master Bedroom</h3>
+                <p>A king bed with a cushioned headboard, floor-to-ceiling curtains, and a private balcony door opening toward the pool deck &mdash; finished with a soft tray ceiling and warm lighting.</p>
+              </div>
+            </div>
+          </div>
 
-    
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="room-card">
+              <div class="photo" style="background-image: url(images/room-living2.jpeg);"></div>
+              <div class="body">
+                <span class="room-tag">Living Room</span>
+                <h3 class="heading">Upper Living &amp; Dining Area</h3>
+                <p>A second, open-plan living space with a fabric sectional, a wooden dining/bar counter, and a front door opening straight onto the garden &mdash; ideal for larger groups to spread out.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="room-card">
+              <div class="photo" style="background-image: url(images/room-terrace.jpeg);"></div>
+              <div class="body">
+                <span class="room-tag">Terrace</span>
+                <h3 class="heading">Rooftop Seating</h3>
+                <p>Bistro-style seating on the rooftop deck, glass railings, and an open view over the surrounding hillside &mdash; the best spot for a coffee at sunrise or sunset.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="room-card">
+              <div class="photo" style="background-image: url(images/room-bedroom2.jpeg);"></div>
+              <div class="body">
+                <span class="room-tag">Bedroom</span>
+                <h3 class="heading">Second Bedroom</h3>
+                <p>A queen bed with a wall-mounted TV, dark blackout curtains for a proper night's sleep, and its own wardrobe unit finished in warm wood tones.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="room-card">
+              <div class="photo" style="background-image: url(images/room-foyer.jpeg);"></div>
+              <div class="body">
+                <span class="room-tag">Foyer</span>
+                <h3 class="heading">Entrance Foyer &amp; Pantry Counter</h3>
+                <p>A wide marble foyer connecting the bedrooms, with a wooden pantry counter and pendant lighting just inside the front door &mdash; the villa's welcome space.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4 d-flex ftco-animate">
+            <div class="room-card room-card-cta d-flex align-items-center justify-content-center text-center">
+              <div class="body">
+                <span class="room-tag">Book a Stay</span>
+                <h3 class="heading">See the Whole Villa</h3>
+                <p class="mb-4">Every room, the pool, and the rooftop &mdash; available together for your group, with cab pickup and sightseeing sorted alongside it.</p>
+                <a href="/index.html#book" class="btn-dt">Check Availability</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Exterior + entrance -->
+    <section class="ftco-section dt-bg-soft">
+      <div class="container">
+        <div class="row justify-content-center pb-4">
+          <div class="col-md-7 text-center ftco-animate">
+            <span class="dt-eyebrow">The villa</span>
+            <h2 style="color:var(--dt);font-family:'Playfair Display',serif;font-weight:700;">Built to Catch the View</h2>
+          </div>
+        </div>
+        <div class="row justify-content-center mb-4 ftco-animate">
+          <div class="col-lg-10">
+            <div class="room-card" style="margin-bottom:0;">
+              <div class="photo" style="height:400px;background-image: url(images/room-exterior2.jpeg);"></div>
+              <div class="body text-center">
+                <span class="room-tag">Exterior</span>
+                <h3 class="heading">The Villa at Blue Hour</h3>
+                <p>A three-level home lit up against the evening sky, with a wraparound balcony, glass-railed terrace, and floor-to-ceiling windows on every side.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4 mb-md-0 ftco-animate">
+            <div class="room-card" style="margin-bottom:0;">
+              <div class="photo" style="height:340px;background-image: url(images/room-exterior.jpeg);"></div>
+              <div class="body">
+                <span class="room-tag">Exterior</span>
+                <h3 class="heading">Dusk on the Terrace</h3>
+                <p>Warm accent lighting along every wall and a private outdoor seating corner, with the hillside village lighting up below as evening sets in.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 ftco-animate">
+            <div class="room-card" style="margin-bottom:0;">
+              <div class="photo" style="height:340px;background-image: url(images/room-entrance.jpeg);"></div>
+              <div class="body">
+                <span class="room-tag">Entrance</span>
+                <h3 class="heading">Main Entrance</h3>
+                <p>A carved wooden front door framed by potted palms and full-height glass panels, set on the villa's private upper deck overlooking the valley.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What's included -->
+    <section class="ftco-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center pb-4">
+          <div class="col-md-7 text-center ftco-animate">
+            <span class="dt-eyebrow">Good to know</span>
+            <h2 style="color:var(--dt);font-family:'Playfair Display',serif;font-weight:700;">What's at the Villa</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <div class="dt-feature">
+              <div class="icon"><i class="fa fa-tint"></i></div>
+              <div class="txt">
+                <h4>Private Pool</h4>
+                <p>Lit plunge pool with poolside seating.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="dt-feature">
+              <div class="icon"><i class="fa fa-cutlery"></i></div>
+              <div class="txt">
+                <h4>Full Kitchen</h4>
+                <p>Granite counter, breakfast bar seating.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="dt-feature">
+              <div class="icon"><i class="fa fa-bed"></i></div>
+              <div class="txt">
+                <h4>Furnished Bedrooms</h4>
+                <p>Private balcony access, marble flooring.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="dt-feature">
+              <div class="icon"><i class="fa fa-binoculars"></i></div>
+              <div class="txt">
+                <h4>Rooftop Terrace</h4>
+                <p>Open seating with hillside views.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="ftco-intro" style="background-image: url(images/bg_1.jpg);" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-9 text-center">
+            <h2>Ready to stay with us?</h2>
+            <p class="mb-4">Book the villa along with cab pickup and sightseeing, all sorted in one call.</p>
+            <p class="mb-0"><a href="/index.html#book" class="btn btn-primary px-4 py-3">Book now</a> <a href="/contact.html" class="btn btn-white px-4 py-3">Contact us</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#22403A"/></svg></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+    <script src="js/google-map.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/include.js"></script>
+
   </body>
 </html>
