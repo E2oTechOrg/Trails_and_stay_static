@@ -77,6 +77,9 @@
         border-color: var(--dt);
         box-shadow: 0 0 0 3px rgba(34,64,58,.12);
       }
+      .dt-contact-form .form-control.is-invalid{
+        border-color: #c0392b;
+      }
       .btn-dt{
         display: inline-block;
         background: var(--dt);
@@ -95,6 +98,7 @@
         background: var(--dt-accent);
         transform: translateY(-2px);
       }
+      .btn-dt .fa{ margin-right: 8px; }
 
       .dt-info-wrap{
         background: var(--dt);
@@ -138,13 +142,32 @@
       }
 
       .dt-bg-soft{ background: var(--dt-soft); }
+
+      #form-message-warning{
+        display: none;
+        background: #fdecea;
+        color: #c0392b;
+        border: 1px solid #f5c6c0;
+        border-radius: 8px;
+        padding: 12px 16px;
+        font-size: 14px;
+      }
+      #form-message-success{
+        display: none;
+        background: var(--dt-soft);
+        color: var(--dt);
+        border: 1px solid var(--dt-light);
+        border-radius: 8px;
+        padding: 12px 16px;
+        font-size: 14px;
+      }
     </style>
   </head>
   <body>
     <div id="header-container"></div>
     <!-- END nav -->
 
-    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/bg_2.jpg');" data-stellar-background-ratio="0.5">
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/k3.jpg');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
@@ -225,7 +248,7 @@
                 <h3 class="mb-4">Send Us a Message</h3>
                 <div id="form-message-warning" class="mb-4"></div>
                 <div id="form-message-success" class="mb-4">
-                  Your message was sent, thank you!
+                  Thanks! Opening WhatsApp with your message&hellip;
                 </div>
                 <form method="POST" id="contactForm" name="contactForm" class="contactForm">
                   <div class="row">
@@ -255,7 +278,7 @@
                     </div>
                     <div class="col-md-12">
                       <div class="form-group">
-                        <input type="submit" value="Send Message" class="btn-dt">
+                        <button type="submit" class="btn-dt"><span class="fa fa-whatsapp"></span>Send Message</button>
                         <div class="submitting"></div>
                       </div>
                     </div>
@@ -288,6 +311,63 @@
     <script src="js/scrollax.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/include.js"></script>
+
+    <script>
+      (function () {
+        // Business WhatsApp number in international format, no "+" or spaces.
+        var WHATSAPP_NUMBER = "918838739288";
+
+        var form = document.getElementById("contactForm");
+        var warningBox = document.getElementById("form-message-warning");
+        var successBox = document.getElementById("form-message-success");
+
+        if (!form) return;
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          var name = document.getElementById("name").value.trim();
+          var phone = document.getElementById("phone").value.trim();
+          var subject = document.getElementById("subject").value.trim();
+          var message = document.getElementById("message").value.trim();
+
+          // Basic validation: require at least name and message.
+          var missing = [];
+          if (!name) missing.push("name");
+          if (!message) missing.push("message");
+
+          [document.getElementById("name"), document.getElementById("message")].forEach(function (el) {
+            el.classList.remove("is-invalid");
+          });
+
+          if (missing.length) {
+            successBox.style.display = "none";
+            warningBox.style.display = "block";
+            warningBox.textContent = "Please fill in your " + missing.join(" and ") + " before sending.";
+            if (!name) document.getElementById("name").classList.add("is-invalid");
+            if (!message) document.getElementById("message").classList.add("is-invalid");
+            return;
+          }
+
+          warningBox.style.display = "none";
+
+          var lines = [
+            "New enquiry from the website:",
+            "Name: " + name
+          ];
+          if (phone) lines.push("Phone: " + phone);
+          if (subject) lines.push("Enquiry: " + subject);
+          lines.push("Message: " + message);
+
+          var text = encodeURIComponent(lines.join("\n"));
+          var waUrl = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + text;
+
+          successBox.style.display = "block";
+
+          window.open(waUrl, "_blank");
+        });
+      })();
+    </script>
 
   </body>
 </html>
