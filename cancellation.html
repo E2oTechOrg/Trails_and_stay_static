@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cancellation Policy - Trails &amp; Stays</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+      :root{
+        --dt: #22403A;
+        --dt-light: #E7EEEC;
+        --dt-soft: #F4F8F7;
+        --dt-accent: #2F5A50;
+      }
+
+      /* Hero */
+      .hero-wrap-2 .overlay{ background: linear-gradient(135deg, rgba(34,64,58,.82), rgba(34,64,58,.55)); }
+      .hero-wrap-2 .breadcrumbs a{ color: #cfe4dd; }
+      .hero-wrap-2 .breadcrumbs span{ color: #fff; }
+
+      .dt-bg-soft{ background: var(--dt-soft); }
+
+      .dt-eyebrow{
+        color: var(--dt);
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      /* Image banner */
+      .policy-banner{
+        position: relative;
+        height: 480px;
+        border-radius: 12px;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 30px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(34,64,58,.18);
+      }
+      .policy-banner:after{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(34,64,58,0) 45%, rgba(34,64,58,.7) 100%);
+      }
+      .policy-banner span{
+        position: absolute;
+        left: 24px;
+        bottom: 18px;
+        z-index: 1;
+        color: #fff;
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-size: 22px;
+      }
+
+      /* Policy card */
+      .policy-card{
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 10px 35px rgba(34,64,58,.1);
+        border-top: 4px solid var(--dt);
+        padding: 45px 45px 35px;
+      }
+      .policy-updated{
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--dt-soft);
+        color: var(--dt);
+        border: 1px solid var(--dt-light);
+        border-radius: 30px;
+        padding: 8px 18px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      .policy-section{
+        position: relative;
+        padding-left: 56px;
+        margin-bottom: 34px;
+      }
+      .policy-section:last-child{ margin-bottom: 0; }
+      .policy-num{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--dt);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+        box-shadow: 0 6px 16px rgba(34,64,58,.3);
+      }
+      .policy-section h4{
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: var(--dt);
+        font-size: 21px;
+        margin-bottom: 10px;
+        padding-top: 5px;
+      }
+      .policy-section p{
+        color: #58685f;
+        margin-bottom: 10px;
+      }
+      .policy-list{
+        list-style: none;
+        padding: 0;
+        margin: 0 0 10px 0;
+      }
+      .policy-list li{
+        position: relative;
+        padding-left: 24px;
+        margin-bottom: 8px;
+        color: #58685f;
+      }
+      .policy-list li:before{
+        content: "\f00c";
+        font-family: "FontAwesome";
+        position: absolute;
+        left: 0;
+        top: 2px;
+        color: var(--dt);
+        font-size: 13px;
+      }
+      .policy-section a{ color: var(--dt); font-weight: 600; }
+
+      /* Refund table */
+      .refund-table-wrap{ overflow-x: auto; margin: 12px 0 10px; }
+      .refund-table{
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        border: 1px solid var(--dt-light);
+        border-radius: 12px;
+        overflow: hidden;
+        min-width: 420px;
+      }
+      .refund-table th{
+        background: var(--dt);
+        color: #fff;
+        font-weight: 600;
+        font-size: 14px;
+        letter-spacing: .5px;
+        text-transform: uppercase;
+        padding: 14px 18px;
+        text-align: left;
+      }
+      .refund-table td{
+        padding: 14px 18px;
+        color: #58685f;
+        border-top: 1px solid var(--dt-light);
+      }
+      .refund-table tr:nth-child(even) td{ background: var(--dt-soft); }
+      .refund-table td strong{ color: var(--dt); }
+
+      /* Highlighted notice */
+      .policy-notice{
+        background: var(--dt-soft);
+        border-left: 4px solid var(--dt);
+        border-radius: 8px;
+        padding: 16px 20px;
+        color: var(--dt);
+        font-weight: 600;
+        margin-bottom: 30px;
+      }
+      .policy-notice i{ margin-right: 8px; }
+
+      /* Contact box */
+      .policy-contact{
+        background: var(--dt-soft);
+        border: 1px solid var(--dt-light);
+        border-radius: 12px;
+        padding: 22px 26px;
+        margin-top: 12px;
+      }
+      .policy-contact p{ margin-bottom: 6px; color: var(--dt); }
+      .policy-contact p:last-child{ margin-bottom: 0; }
+      .policy-contact i{ width: 22px; color: var(--dt); }
+
+      @media (max-width: 575px){
+        .policy-card{ padding: 30px 22px 25px; }
+        .policy-banner{ height: 200px; }
+        .policy-section{ padding-left: 0; }
+        .policy-num{ position: static; margin-bottom: 12px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-container"></div>
+    <!-- END nav -->
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/k3.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Cancellation Policy <i class="fa fa-chevron-right"></i></span></p>
+            <h1 class="mb-0 bread">Cancellation Policy</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section dt-bg-soft">
+      <div class="container">
+        <div class="row justify-content-center pb-4">
+          <div class="col-md-8 text-center ftco-animate">
+            <span class="dt-eyebrow">Plans change</span>
+            <h2 style="color:var(--dt);font-family:'Playfair Display',serif;font-weight:700;">Cancellations &amp; Refunds</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-10 mx-auto ftco-animate">
+
+            <!-- Image -->
+            <div class="policy-banner" style="background-image: url(images/cancel.webp);">
+              <span>Plans change. We'll work it out with you.</span>
+            </div>
+
+            <div class="policy-card">
+              <span class="policy-updated"><i class="fa fa-calendar"></i> Last updated: September 2026</span>
+
+              <div class="policy-notice">
+                <i class="fa fa-info-circle"></i>The earlier you tell us, the more we can refund. Please contact us by phone to cancel or change a booking.
+              </div>
+
+              <p style="color:#58685f;" class="mb-4">This policy applies to jeep adventure rides, cab service, stays, and tour packages booked with Trails &amp; Stays in Kodaikanal. It should be read with our <a href="terms.html">Terms &amp; Conditions</a> and <a href="payment.html">Payment Policy</a>.</p>
+
+              <div class="policy-section">
+                <div class="policy-num">1</div>
+                <h4>How to Cancel</h4>
+                <ul class="policy-list">
+                  <li>Call us on <a href="tel:+919677304131">+91 96773 04131</a> with your name, booking date, and service booked</li>
+                  <li>Your cancellation counts from the time we receive and acknowledge your request</li>
+                  <li>Please ask for a confirmation of the cancellation for your records</li>
+                </ul>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">2</div>
+                <h4>Refund Schedule</h4>
+                <p>The refund on your advance or paid amount depends on how far ahead of the service date you cancel:</p>
+                <div class="refund-table-wrap">
+                  <table class="refund-table">
+                    <thead>
+                      <tr>
+                        <th>Time before service / check-in</th>
+                        <th>Refund</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>7 days or more</td>
+                        <td><strong>Full refund</strong> (minus payment charges, if any)</td>
+                      </tr>
+                      <tr>
+                        <td>3 to 6 days</td>
+                        <td><strong>50% refund</strong></td>
+                      </tr>
+                      <tr>
+                        <td>Less than 3 days</td>
+                        <td><strong>No refund</strong></td>
+                      </tr>
+                      <tr>
+                        <td>No-show</td>
+                        <td><strong>No refund</strong></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">3</div>
+                <h4>Peak Season &amp; Special Bookings</h4>
+                <p>During peak season, long weekends, and holidays, and for pre-booking services such as night camping and bonfire experiences, stricter terms may apply. Any special cancellation terms will be told to you at the time of booking.</p>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">4</div>
+                <h4>Changes &amp; Rescheduling</h4>
+                <ul class="policy-list">
+                  <li>You can request a change of date, subject to availability</li>
+                  <li>Please ask as early as possible; last-minute changes may not be possible</li>
+                  <li>Any difference in rates for the new date is payable by you</li>
+                </ul>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">5</div>
+                <h4>Cancellation by Us</h4>
+                <p>If we have to cancel or change a service because of heavy rain, landslides, road closures, government restrictions, safety concerns, or unavailability, we will inform you as soon as possible. You can choose between a new date, an alternative service, or a refund of the amount paid for the affected service.</p>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">6</div>
+                <h4>Weather &amp; Unused Services</h4>
+                <ul class="policy-list">
+                  <li>Bad weather alone does not entitle you to a refund if the service can still be safely provided, though we will adjust the route or timing where possible</li>
+                  <li>Services already started or partly used, and unused meals, stops, or nights, are not refundable</li>
+                  <li>Early check-out from a stay is not refundable</li>
+                </ul>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">7</div>
+                <h4>How Refunds Are Paid</h4>
+                <ul class="policy-list">
+                  <li>Approved refunds are sent to the original payment method or the account you give us</li>
+                  <li>Refunds are usually processed within 7 to 10 working days after approval</li>
+                  <li>Your bank or payment app may take extra time to show the amount</li>
+                </ul>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">8</div>
+                <h4>Contact Us</h4>
+                <p>Need to cancel or have a question about a refund? Reach out to us:</p>
+                <div class="policy-contact">
+                  <p><i class="fa fa-map-marker"></i>17/304, MM Road, Kodaikanal</p>
+                  <p><i class="fa fa-phone"></i><a href="tel:+919677304131">+91 96773 04131</a></p>
+                  <!-- <p><i class="fa fa-envelope"></i><a href="mailto:youremail@example.com">youremail@example.com</a></p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#22403A"/></svg></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/include.js"></script>
+  </body>
+</html>

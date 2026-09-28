@@ -60,6 +60,74 @@ body {
   text-align: left;
   background-color: #fff; }
 
+  .navbar-brand { padding: 0; }
+.navbar-brand .brand-logo {
+	height: 80px;   /* adjust as needed */
+	width: auto;
+	display: block;
+}
+/* Footer spacing */
+#footer {
+	padding: 60px 0 0 !important;
+}
+#footer .footer-heading {
+	margin-top: 0;
+	margin-bottom: 18px;
+	font-size: 22px;
+	line-height: 1.2;
+}
+
+/* Logo: left aligned so it lines up with the text and headings */
+#footer .logo {
+	display: inline-block;
+	margin-bottom: 14px;
+}
+#footer .footer-logo {
+	height: 80px;
+	width: auto;
+	display: block;
+	object-fit: contain;
+	margin: 0;
+}
+
+/* Column text */
+#footer p {
+	margin-bottom: 12px;
+}
+#footer .list-unstyled {
+	margin-bottom: 0;
+}
+
+/* Bottom bar: much less space */
+#footer .footer-bottom {
+	margin-top: 30px;
+	padding: 18px 0;
+	border-color: rgba(255, 255, 255, .2) !important;
+}
+
+/* Footer text: all white */
+#footer,
+#footer p,
+#footer .footer-heading,
+#footer a,
+#footer li,
+#footer .copyright,
+#footer .fa {
+	color: #fff !important;
+}
+#footer a:hover {
+	color: #fff !important;
+	opacity: .75;
+	text-decoration: none;
+}
+
+@media (max-width: 767px) {
+	#footer { padding-top: 40px !important; }
+}
+
+/* Optional: make the heart white too */
+/* #footer .fa-heart { color: #fff !important; } */
+
 [tabindex="-1"]:focus {
   outline: 0 !important; }
 
