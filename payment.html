@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Payment Policy - Trails &amp; Stays</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,500,500i,600,600i,700,700i&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="css/jquery.timepicker.css">
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+      :root{
+        --dt: #22403A;
+        --dt-light: #E7EEEC;
+        --dt-soft: #F4F8F7;
+        --dt-accent: #2F5A50;
+      }
+
+      /* Hero */
+      .hero-wrap-2 .overlay{ background: linear-gradient(135deg, rgba(34,64,58,.82), rgba(34,64,58,.55)); }
+      .hero-wrap-2 .breadcrumbs a{ color: #cfe4dd; }
+      .hero-wrap-2 .breadcrumbs span{ color: #fff; }
+
+      .dt-bg-soft{ background: var(--dt-soft); }
+
+      .dt-eyebrow{
+        color: var(--dt);
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 1.5px;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      /* Image banner */
+      .policy-banner{
+        position: relative;
+        height: 480px;
+        border-radius: 12px;
+        background-size: cover;
+        background-position: center;
+        margin-bottom: 30px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(34,64,58,.18);
+      }
+      .policy-banner:after{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(34,64,58,0) 45%, rgba(34,64,58,.7) 100%);
+      }
+      .policy-banner span{
+        position: absolute;
+        left: 24px;
+        bottom: 18px;
+        z-index: 1;
+        color: #fff;
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-size: 22px;
+      }
+
+      /* Policy card */
+      .policy-card{
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 10px 35px rgba(34,64,58,.1);
+        border-top: 4px solid var(--dt);
+        padding: 45px 45px 35px;
+      }
+      .policy-updated{
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--dt-soft);
+        color: var(--dt);
+        border: 1px solid var(--dt-light);
+        border-radius: 30px;
+        padding: 8px 18px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      .policy-section{
+        position: relative;
+        padding-left: 56px;
+        margin-bottom: 34px;
+      }
+      .policy-section:last-child{ margin-bottom: 0; }
+      .policy-num{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--dt);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        font-size: 14px;
+        box-shadow: 0 6px 16px rgba(34,64,58,.3);
+      }
+      .policy-section h4{
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: var(--dt);
+        font-size: 21px;
+        margin-bottom: 10px;
+        padding-top: 5px;
+      }
+      .policy-section p{
+        color: #58685f;
+        margin-bottom: 10px;
+      }
+      .policy-list{
+        list-style: none;
+        padding: 0;
+        margin: 0 0 10px 0;
+      }
+      .policy-list li{
+        position: relative;
+        padding-left: 24px;
+        margin-bottom: 8px;
+        color: #58685f;
+      }
+      .policy-list li:before{
+        content: "\f00c";
+        font-family: "FontAwesome";
+        position: absolute;
+        left: 0;
+        top: 2px;
+        color: var(--dt);
+        font-size: 13px;
+      }
+      .policy-section a{ color: var(--dt); font-weight: 600; }
+
+      /* Payment method chips */
+      .pay-methods{
+        list-style: none;
+        padding: 0;
+        margin: 0 0 10px 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .pay-methods li{
+        background: var(--dt-soft);
+        color: var(--dt);
+        border: 1px solid var(--dt-light);
+        border-radius: 30px;
+        padding: 6px 16px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .pay-methods li i{ margin-right: 6px; }
+
+      /* Contact box */
+      .policy-contact{
+        background: var(--dt-soft);
+        border: 1px solid var(--dt-light);
+        border-radius: 12px;
+        padding: 22px 26px;
+        margin-top: 12px;
+      }
+      .policy-contact p{ margin-bottom: 6px; color: var(--dt); }
+      .policy-contact p:last-child{ margin-bottom: 0; }
+      .policy-contact i{ width: 22px; color: var(--dt); }
+
+      @media (max-width: 575px){
+        .policy-card{ padding: 30px 22px 25px; }
+        .policy-banner{ height: 200px; }
+        .policy-section{ padding-left: 0; }
+        .policy-num{ position: static; margin-bottom: 12px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="header-container"></div>
+    <!-- END nav -->
+
+    <section class="hero-wrap hero-wrap-2" style="background-image: url('images/k3.jpg');" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+          <div class="col-md-9 ftco-animate text-center">
+            <p class="breadcrumbs mb-2"><span class="mr-2"><a href="index.html">Home <i class="fa fa-chevron-right"></i></a></span> <span>Payment Policy <i class="fa fa-chevron-right"></i></span></p>
+            <h1 class="mb-0 bread">Payment Policy</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section dt-bg-soft">
+      <div class="container">
+        <div class="row justify-content-center pb-4">
+          <div class="col-md-8 text-center ftco-animate">
+            <span class="dt-eyebrow">Simple &amp; transparent</span>
+            <h2 style="color:var(--dt);font-family:'Playfair Display',serif;font-weight:700;">How Payments Work</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-10 mx-auto ftco-animate">
+
+            <!-- Image -->
+            <div class="policy-banner" style="background-image: url(images/payment.webp);">
+              <span>Clear pricing. No surprises.</span>
+            </div>
+
+            <div class="policy-card">
+              <span class="policy-updated"><i class="fa fa-calendar"></i> Last updated: September 2026</span>
+              <p style="color:#58685f;" class="mb-4">This policy explains how payments work for jeep adventure rides, cab service, stays, and tour packages booked with Trails &amp; Stays in Kodaikanal. Please read it along with our <a href="terms.html">Terms &amp; Conditions</a> and <a href="cancellation.html">Cancellation Policy</a>.</p>
+
+              <div class="policy-section">
+                <div class="policy-num">1</div>
+                <h4>Accepted Payment Methods</h4>
+                <p>We accept the following:</p>
+                <ul class="pay-methods">
+                  <li><i class="fa fa-mobile"></i>UPI</li>
+                  <li><i class="fa fa-university"></i>Bank Transfer</li>
+                  <li><i class="fa fa-money"></i>Cash</li>
+                </ul>
+                <p>Payment details are shared directly by our team when you confirm your booking. Please pay only to the account or UPI ID we give you.</p>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">2</div>
+                <h4>Advance Payment</h4>
+                <ul class="policy-list">
+                  <li>An advance may be required to confirm your booking, especially for stays, multi-day packages, and pre-booking services such as night camping and bonfire</li>
+                  <li>The advance amount will be told to you at the time of booking</li>
+                  <li>Your booking is confirmed only after we receive the advance and acknowledge it</li>
+                </ul>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">3</div>
+                <h4>Balance Payment</h4>
+                <p>The remaining amount is payable at the time agreed with you, usually before or on arrival, pickup, or check-in. Services may be withheld if the balance is not paid as agreed.</p>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">4</div>
+                <h4>Pricing &amp; What's Included</h4>
+                <ul class="policy-list">
+                  <li>All prices are in Indian Rupees (INR)</li>
+                  <li>Rates are as quoted at the time of booking and may be higher in peak season and on holidays</li>
+                  <li>Tour packages include driver bata, fuel, parking, and toll unless stated otherwise</li>
+                  <li>Entry fees for tourist places, meals, and personal expenses are not included</li>
+                </ul>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">5</div>
+                <h4>Extra Charges</h4>
+                <p>Any changes you request after booking, such as extra hours, added stops, extra guests, or a longer stay, may cost extra. We will tell you the additional amount before it is added to your bill.</p>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">6</div>
+                <h4>Payment Confirmation &amp; Receipts</h4>
+                <p>After you pay, please share a screenshot or transaction reference with us so we can match it to your booking. You can ask for a payment receipt or bill at any time.</p>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">7</div>
+                <h4>Failed or Delayed Payments</h4>
+                <p>If money is deducted from your account but we haven't received it, contact us with your transaction details. Such amounts are usually returned by your bank within a few working days. We are not responsible for delays or failures on the side of your bank or payment app.</p>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">8</div>
+                <h4>Refunds</h4>
+                <p>Refund eligibility, amounts, and timelines are covered in our <a href="cancellation.html">Cancellation Policy</a>. Approved refunds are sent back to the original payment method or the account you provide.</p>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">9</div>
+                <h4>Payment Safety</h4>
+                <ul class="policy-list">
+                  <li>We will never ask for your card PIN, UPI PIN, or OTP</li>
+                  <li>Confirm payment details with our team by phone if you are unsure</li>
+                  <li>We do not store your card or banking credentials on this website</li>
+                </ul>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">10</div>
+                <h4>Payment Disputes</h4>
+                <p>If you believe you were charged incorrectly, please contact us as soon as possible with your booking and payment details. We will review the issue and reply promptly.</p>
+              </div>
+
+              <div class="policy-section">
+                <div class="policy-num">11</div>
+                <h4>Contact Us</h4>
+                <p>For any payment-related questions, reach out to us:</p>
+                <div class="policy-contact">
+                  <p><i class="fa fa-map-marker"></i>17/304, MM Road, Kodaikanal</p>
+                  <p><i class="fa fa-phone"></i><a href="tel:+919677304131">+91 96773 04131</a></p>
+                  <!-- <p><i class="fa fa-envelope"></i><a href="mailto:youremail@example.com">youremail@example.com</a></p> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#22403A"/></svg></div>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/jquery.timepicker.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/include.js"></script>
+  </body>
+</html>
