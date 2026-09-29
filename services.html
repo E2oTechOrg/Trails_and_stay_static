@@ -104,142 +104,59 @@
         text-decoration: none;
       }
 
-      /* Package timeline */
-      .pkg-timeline{ position: relative; padding-left: 50px; }
-      .pkg-timeline:before{
-        content: "";
-        position: absolute;
-        left: 19px;
-        top: 6px;
-        bottom: 6px;
-        width: 2px;
-        background: var(--dt-light);
-      }
-      .pkg-day{ position: relative; margin-bottom: 40px; }
-      .pkg-day:last-child{ margin-bottom: 0; }
-      .pkg-day-num{
-        position: absolute;
-        left: -50px;
-        top: 0;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        background: var(--dt);
-        color: #fff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 14px;
-        box-shadow: 0 6px 16px rgba(34,64,58,.3);
-      }
-      .pkg-day h4{
-        font-family: 'Playfair Display', serif;
-        font-weight: 700;
-        margin-bottom: 4px;
-        color: var(--dt);
-      }
-      .pkg-day .pkg-sub{
-        color: var(--dt);
-        font-weight: 600;
-        text-transform: uppercase;
-        font-size: 13px;
-        letter-spacing: .5px;
-        display: block;
-        margin-bottom: 10px;
-      }
-      .pkg-places{
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-      .pkg-places li{
-        background: var(--dt-soft);
-        color: var(--dt);
-        border: 1px solid var(--dt-light);
-        border-radius: 30px;
-        padding: 6px 16px;
-        font-size: 14px;
-      }
-      .pkg-or{
-        text-align: center;
-        margin: 25px 0;
-        position: relative;
-        color: var(--dt);
-        font-weight: 700;
-        letter-spacing: 1px;
-      }
-      .pkg-or:before, .pkg-or:after{
-        content: "";
-        position: absolute;
-        top: 50%;
-        width: 42%;
-        height: 1px;
-        background: var(--dt-light);
-      }
-      .pkg-or:before{ left: 0; }
-      .pkg-or:after{ right: 0; }
-      .pkg-info{
-        background: #fff;
-        border-radius: 12px;
-        box-shadow: 0 10px 35px rgba(34,64,58,.1);
-        padding: 35px;
-        margin-top: 20px;
-        border-top: 4px solid var(--dt);
-      }
-      .pkg-info h5{
-        font-weight: 700;
-        margin-bottom: 14px;
-        color: var(--dt);
-      }
-      .pkg-info ul{
-        list-style: none;
-        padding: 0;
-        margin: 0 0 20px 0;
-      }
-      .pkg-info ul li{
-        position: relative;
-        padding-left: 24px;
-        margin-bottom: 8px;
-      }
-      .pkg-info ul.pkg-include li:before{
-        content: "\f00c";
-        font-family: "FontAwesome";
-        position: absolute;
-        left: 0;
-        top: 2px;
-        color: var(--dt);
-        font-size: 13px;
-      }
-      .pkg-info ul.pkg-exclude li:before{
-        content: "\f00d";
-        font-family: "FontAwesome";
-        position: absolute;
-        left: 0;
-        top: 2px;
-        color: #c0392b;
-        font-size: 13px;
-      }
-      .pkg-timing{
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: var(--dt-soft);
-        color: var(--dt);
-        border: 1px solid var(--dt-light);
-        border-radius: 30px;
-        padding: 8px 18px;
-        font-size: 14px;
-        font-weight: 600;
-        margin-right: 12px;
-        margin-bottom: 10px;
-      }
-      .pkg-timing i{ color: var(--dt); }
-
       .dt-bg-soft{ background: var(--dt-soft); }
+
+      /* Package: tabbed layout with summary sidebar */
+      .tp-wrap{ display:grid; grid-template-columns:1fr; gap:28px; align-items:start; }
+      @media (min-width:992px){ .tp-wrap{ grid-template-columns:1.7fr 1fr; } }
+
+      .tp-main{ background:#fff; border-radius:14px; box-shadow:0 12px 36px rgba(34,64,58,.1); overflow:hidden; }
+
+      .tp-tabs{ display:flex; background:var(--dt); }
+      .tp-tabs button{
+        flex:1; border:none; background:transparent; color:#cfe4dd; cursor:pointer;
+        padding:16px 10px; font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:1px;
+        border-bottom:4px solid transparent; transition:background .25s ease, color .25s ease;
+      }
+      .tp-tabs button b{ display:block; font-family:'Playfair Display',serif; font-size:20px; letter-spacing:0; }
+      .tp-tabs button.active{ background:#fff; color:var(--dt); border-bottom-color:var(--dt-accent); }
+
+      .tp-panel{ display:none; padding:30px 30px 34px; }
+      .tp-panel.active{ display:block; }
+      .tp-panel h4{ font-family:'Playfair Display',serif; font-weight:700; color:var(--dt); margin-bottom:6px; }
+      .tp-panel .tp-sub{ display:block; color:var(--dt-accent); font-weight:600; font-size:13px;
+        text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; }
+      .tp-panel p{ color:#667873; font-size:15px; }
+
+      .tp-stops{ list-style:none; margin:16px 0 0; padding:0; counter-reset:stop;
+        display:grid; grid-template-columns:1fr; gap:10px 24px; }
+      @media (min-width:576px){ .tp-stops{ grid-template-columns:1fr 1fr; } }
+      .tp-stops li{ counter-increment:stop; display:flex; align-items:center; gap:12px;
+        font-size:14px; color:var(--dt); padding:8px 0; border-bottom:1px dashed var(--dt-light); }
+      .tp-stops li:before{ content:counter(stop); flex:0 0 auto; width:26px; height:26px; border-radius:50%;
+        background:var(--dt-light); color:var(--dt); font-size:12px; font-weight:700;
+        display:flex; align-items:center; justify-content:center; }
+
+      .tp-sub-toggle{ display:inline-flex; background:var(--dt-light); border-radius:30px; padding:4px; margin:6px 0 4px; }
+      .tp-sub-toggle button{ border:none; background:transparent; padding:8px 20px; font-size:13px; font-weight:700;
+        text-transform:uppercase; color:var(--dt); border-radius:30px; cursor:pointer; }
+      .tp-sub-toggle button.active{ background:var(--dt); color:#fff; }
+      .tp-tour{ display:none; }
+      .tp-tour.active{ display:block; }
+      .tp-drop{ margin:20px 0 0 !important; padding:12px 16px; background:var(--dt-soft);
+        border-left:4px solid var(--dt); border-radius:6px; color:var(--dt) !important; font-weight:600; }
+
+      .tp-side{ background:#fff; border-radius:14px; box-shadow:0 12px 36px rgba(34,64,58,.1);
+        border-top:4px solid var(--dt); padding:26px 26px 12px; }
+      @media (min-width:992px){ .tp-side{ position:sticky; top:90px; } }
+      .tp-side h5{ font-weight:700; color:var(--dt); font-size:15px; text-transform:uppercase;
+        letter-spacing:1px; margin-bottom:12px; }
+      .tp-block{ margin-bottom:20px; padding-bottom:18px; border-bottom:1px solid var(--dt-light); }
+      .tp-block:last-child{ border-bottom:none; margin-bottom:0; }
+      .tp-side ul{ list-style:none; margin:0; padding:0; }
+      .tp-side li{ font-size:14px; color:#4d605b; margin-bottom:8px; display:flex; align-items:center; gap:10px; }
+      .tp-side li i{ width:18px; text-align:center; color:var(--dt); }
+      .tp-side li i.fa-times{ color:#c0392b; }
     </style>
   </head>
   <body>
@@ -272,7 +189,7 @@
               <div class="img" style="background-image: url(images/jeep1.jpeg);"></div>
               <div class="media-body py-4 px-3">
                 <h3 class="heading">Off-Road Jeep Adventure Raids</h3>
-                <p>Thrilling off-road jeep raids through rugged terrain, guided by experienced drivers for an adrenaline-packed adventure.</p>
+                <p>Explore the unseen Kodai with off-road jeep rides through various falls and up to the highest peak and view point, with breathtaking sunrise and sunset views and night rides through the forests to see the wild.</p>
                 <p class="mb-0"><a href="jeep.html" class="btn-dt">Read more</a></p>
               </div>
             </div>      
@@ -310,64 +227,76 @@
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-10 mx-auto">
-            <div class="pkg-timeline">
+        <div class="tp-wrap">
 
-              <div class="pkg-day">
-                <div class="pkg-day-num">1</div>
-                <span class="pkg-sub">Arrival</span>
-                <h4>Day 1 &ndash; Pickup &amp; Check-In</h4>
-                <p class="mb-2">Morning pickup from Kodaikanal Bus Station and drop to your hotel.</p>
-                <p class="mb-2">Same day, after breakfast &ndash; <strong>Valley Tour</strong>:</p>
-                <ul class="pkg-places">
-                  <li>Coaker's Walk</li>
-                  <li>Upper Lake View Point</li>
-                  <li>Pine Forest (Shooting Spot)</li>
-                  <li>Moir Point</li>
-                  <li>Guna Cave (Devil's Kitchen)</li>
-                  <li>Golf Course Ground View</li>
-                  <li>Green Valley View Point (Suicide Point)</li>
-                  <li>Pillar Rocks</li>
-                  <li>Pambar Falls</li>
-                  <li>Kodaikanal Lake</li>
-                  <li>Bryant Park</li>
-                </ul>
+          <!-- Tabbed itinerary -->
+          <div class="tp-main">
+            <div class="tp-tabs" id="tpDayTabs">
+              <button type="button" class="active" data-day="1">Day <b>1</b></button>
+              <button type="button" data-day="2">Day <b>2</b></button>
+              <button type="button" data-day="3">Day <b>3</b></button>
+            </div>
+
+            <!-- Day 1 -->
+            <div class="tp-panel active" data-day="1">
+              <span class="tp-sub">Arrival</span>
+              <h4>Pickup &amp; Check-In</h4>
+              <p class="mb-2">Morning pickup from Kodaikanal Bus Station and drop to your hotel.</p>
+              <p class="mb-0">Same day, after breakfast &ndash; <strong>Valley Tour</strong>:</p>
+              <ul class="tp-stops">
+                <li>Coaker's Walk</li>
+                <li>Upper Lake View Point</li>
+                <li>Pine Forest (Shooting Spot)</li>
+                <li>Moir Point</li>
+                <li>Guna Cave (Devil's Kitchen)</li>
+                <li>Golf Course Ground View</li>
+                <li>Green Valley View Point (Suicide Point)</li>
+                <li>Pillar Rocks</li>
+                <li>Pambar Falls</li>
+                <li>Kodaikanal Lake</li>
+                <li>Bryant Park</li>
+              </ul>
+            </div>
+
+            <!-- Day 2 -->
+            <div class="tp-panel" data-day="2">
+              <span class="tp-sub">Village Trail</span>
+              <h4>Village Tour</h4>
+              <ul class="tp-stops">
+                <li>Mahalakshmi Temple</li>
+                <li>Poombarai Village View</li>
+                <li>3000-Year-Old Murugan Temple</li>
+                <li>Sheep Farm</li>
+                <li>Rabbit Farm (Shooting Spot)</li>
+                <li>Manavanur Lake View</li>
+                <li>Manavanur Lake</li>
+              </ul>
+            </div>
+
+            <!-- Day 3 -->
+            <div class="tp-panel" data-day="3">
+              <span class="tp-sub">Choose one</span>
+              <h4>Picnic Tour or Park Tour</h4>
+
+              <div class="tp-sub-toggle" id="tpTourToggle">
+                <button type="button" class="active" data-tour="picnic">Picnic Tour</button>
+                <button type="button" data-tour="park">Park Tour</button>
               </div>
 
-              <div class="pkg-day">
-                <div class="pkg-day-num">2</div>
-                <span class="pkg-sub">Village Trail</span>
-                <h4>Day 2 &ndash; Village Tour</h4>
-                <ul class="pkg-places">
-                  <li>Mahalakshmi Temple</li>
-                  <li>Poombarai Village View</li>
-                  <li>3000-Year-Old Murugan Temple</li>
-                  <li>Sheep Farm</li>
-                  <li>Rabbit Farm (Shooting Spot)</li>
-                  <li>Manavanur Lake View</li>
-                  <li>Manavanur Lake</li>
-                </ul>
-              </div>
-
-              <div class="pkg-day">
-                <div class="pkg-day-num">3</div>
-                <span class="pkg-sub">Choose one</span>
-                <h4>Day 3 &ndash; Picnic Tour or Park Tour</h4>
-
-                <p class="mb-2"><strong>Picnic Tour</strong> (Trekking Tour):</p>
-                <ul class="pkg-places">
+              <div class="tp-tour active" data-tour="picnic">
+                <p class="mb-0 mt-2"><strong>Picnic Tour</strong> (Trekking Tour):</p>
+                <ul class="tp-stops">
                   <li>Vattakanal Falls</li>
                   <li>La Saleth Church</li>
                   <li>500-Year-Old Tree View</li>
                   <li>Mount View</li>
                   <li>Dolphin's Nose View</li>
                 </ul>
+              </div>
 
-                <div class="pkg-or">OR</div>
-
-                <p class="mb-2"><strong>Park Tour</strong>:</p>
-                <ul class="pkg-places">
+              <div class="tp-tour" data-tour="park">
+                <p class="mb-0 mt-2"><strong>Park Tour</strong>:</p>
+                <ul class="tp-stops">
                   <li>Kurinji Andavar Temple</li>
                   <li>Chettiar Park</li>
                   <li>Palani View</li>
@@ -377,37 +306,38 @@
                   <li>Kodaikanal Lake</li>
                   <li>Bryant Park</li>
                 </ul>
-
-                <p class="mt-3 mb-0">Evening drop at Kodaikanal Bus Station.</p>
               </div>
 
+              <p class="tp-drop"><i class="fa fa-flag-checkered"></i>&nbsp; Evening drop at Kodaikanal Bus Station.</p>
             </div>
-
-            <div class="pkg-info">
-              <h5>Sightseeing Timings</h5>
-              <span class="pkg-timing"><i class="fa fa-clock-o"></i> Pickup: 9:00 AM &ndash; 10:00 AM</span>
-              <span class="pkg-timing"><i class="fa fa-clock-o"></i> Drop: 4:00 PM &ndash; 5:00 PM</span>
-
-              <div class="row mt-4">
-                <div class="col-md-6">
-                  <h5>Package Including</h5>
-                  <ul class="pkg-include">
-                    <li>Driver Bata</li>
-                    <li>Fuel</li>
-                    <li>Parking</li>
-                    <li>Toll</li>
-                  </ul>
-                </div>
-                <div class="col-md-6">
-                  <h5>Package Excluding</h5>
-                  <ul class="pkg-exclude">
-                    <li>Places Entry Fee</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
           </div>
+
+          <!-- Summary sidebar -->
+          <aside class="tp-side">
+            <div class="tp-block">
+              <h5>Sightseeing Timings</h5>
+              <ul>
+                <li><i class="fa fa-clock-o"></i> Pickup: 9:00 AM &ndash; 10:00 AM</li>
+                <li><i class="fa fa-clock-o"></i> Drop: 4:00 PM &ndash; 5:00 PM</li>
+              </ul>
+            </div>
+            <div class="tp-block">
+              <h5>Package Including</h5>
+              <ul>
+                <li><i class="fa fa-check"></i> Driver Bata</li>
+                <li><i class="fa fa-check"></i> Fuel</li>
+                <li><i class="fa fa-check"></i> Parking</li>
+                <li><i class="fa fa-check"></i> Toll</li>
+              </ul>
+            </div>
+            <div class="tp-block">
+              <h5>Package Excluding</h5>
+              <ul>
+                <li><i class="fa fa-times"></i> Places Entry Fee</li>
+              </ul>
+            </div>
+          </aside>
+
         </div>
 			</div>
 		</section>
@@ -437,7 +367,38 @@
   <script src="js/main.js"></script>
   <script src="js/include.js"></script>
 
+  <!-- Package tabs -->
+  <script>
+    (function(){
+      var dayTabs = document.getElementById('tpDayTabs');
+      if(dayTabs){
+        dayTabs.querySelectorAll('button').forEach(function(btn){
+          btn.addEventListener('click', function(){
+            var day = btn.getAttribute('data-day');
+            dayTabs.querySelectorAll('button').forEach(function(b){ b.classList.remove('active'); });
+            btn.classList.add('active');
+            document.querySelectorAll('.tp-panel').forEach(function(p){
+              p.classList.toggle('active', p.getAttribute('data-day') === day);
+            });
+          });
+        });
+      }
 
-    
+      var tourToggle = document.getElementById('tpTourToggle');
+      if(tourToggle){
+        tourToggle.querySelectorAll('button').forEach(function(btn){
+          btn.addEventListener('click', function(){
+            var tour = btn.getAttribute('data-tour');
+            tourToggle.querySelectorAll('button').forEach(function(b){ b.classList.remove('active'); });
+            btn.classList.add('active');
+            document.querySelectorAll('.tp-tour').forEach(function(t){
+              t.classList.toggle('active', t.getAttribute('data-tour') === tour);
+            });
+          });
+        });
+      }
+    })();
+  </script>
+
   </body>
 </html>
