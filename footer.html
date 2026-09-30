@@ -65,15 +65,14 @@
 	</div>
 </footer>
 
-<!-- Floating WhatsApp button -->
+<!-- Floating WhatsApp + Call buttons -->
 <style>
-	.wa-float {
+	.wa-float,
+	.call-float {
 		position: fixed;
-		bottom: 40px;
 		right: 18px;
 		width: 52px;
 		height: 52px;
-		background: #25D366;
 		border-radius: 50%;
 		display: flex;
 		align-items: center;
@@ -82,9 +81,23 @@
 		z-index: 9999;
 		transition: transform 0.2s ease;
 	}
-	.wa-float:hover { transform: scale(1.1); }
-	.wa-float i { color: #fff; font-size: 30px; line-height: 1; }
+	.wa-float { bottom: 40px; background: #25D366; }
+	.call-float { bottom: 104px; background: #007bff; }
+	.wa-float:hover,
+	.call-float:hover { transform: scale(1.1); }
+	.wa-float i,
+	.call-float i { color: #fff; font-size: 26px; line-height: 1; }
+	.wa-float i { font-size: 30px; }
 </style>
+
+<a
+	href="tel:+919677304131"
+	class="call-float"
+	aria-label="Call us"
+>
+	<i class="fa fa-phone"></i>
+</a>
+
 <a
 	href="https://wa.me/919677304131?text=Hi%20Trails%20%26%20Stays%2C%20I%27m%20interested%20in%20your%20Kodaikanal%20travel%20services.%20Please%20share%20details%20about%20jeep%20rides%2C%20cab%20services%2C%20and%20accommodation."
 	class="wa-float"

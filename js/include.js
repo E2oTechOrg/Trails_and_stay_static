@@ -49,17 +49,23 @@ function initFooter() {
 
 // Active menu function
 function setActiveMenu() {
-  const links = document.querySelectorAll(".navbar-nav .nav-link");
-  const currentPage = window.location.pathname.split("/").pop();
+  const page = (window.location.pathname.split("/").pop() || "index")
+    .toLowerCase()
+    .replace(".html", "");
 
-  links.forEach(link => {
-    const linkPage = link.getAttribute("href");
+  const parentMap = {
+    jeep: "services",
+    cab: "services",
+    rooms: "services"
+  };
+  const target = parentMap[page] || page;
 
-    if (linkPage === currentPage || (currentPage === "" && linkPage === "index.html")) {
-      link.classList.add("active");
-    } else {
-      link.classList.remove("active");
-    }
+  document.querySelectorAll("#ftco-nav .nav-item").forEach(item => {
+    const link = item.querySelector(".nav-link");
+    const href = link.getAttribute("href").toLowerCase().replace(".html", "");
+
+    link.classList.remove("active");
+    item.classList.toggle("active", href === target);
   });
 }
 
